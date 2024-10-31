@@ -1,5 +1,17 @@
+const { sequelize, Model, DataTypes } = require("../db/connection");
 
-let Post;
+class Post extends Model {}
 
+Post.init(
+  {
+    title: DataTypes.STRING,
+    body: DataTypes.STRING,
+    createdAt: DataTypes.STRING,
+  },
+  {
+    sequelize,
+    modelName: "post",
+  }
+);
 
 module.exports = Post;

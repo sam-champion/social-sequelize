@@ -1,5 +1,16 @@
+const { sequelize, Model, DataTypes } = require("../db/connection");
 
-let Comment;
+class Comment extends Model {}
 
+Comment.init(
+  {
+    body: DataTypes.STRING,
+    createdAt: DataTypes.STRING,
+  },
+  {
+    sequelize,
+    modelName: "comment",
+  }
+);
 
 module.exports = Comment;
